@@ -4,9 +4,9 @@
 #include <bits/stdc++.h>
 #include <iostream>
 
-//#include "Set_1.h" // массив символов
+#include "Set_1.h" // массив символов
 //#include "Set_2.h" // массив битов
-#include "Set_3.h" // машинное слово
+//#include "Set_3.h" // машинное слово
 
 using namespace std;
 
