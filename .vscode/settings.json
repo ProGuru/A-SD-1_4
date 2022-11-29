@@ -6,6 +6,8 @@
         "compare": "cpp",
         "fstream": "cpp",
         "sstream": "cpp",
-        "valarray": "cpp"
-    }
+        "valarray": "cpp",
+        "new": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
