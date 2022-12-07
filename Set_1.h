@@ -66,7 +66,7 @@ Set &Set::operator|= (const Set &B)
     return *this;
 }
 
-Set Set::operator| (const Set &B) const
+Set Set::opertor| (const Set &B) const
 {
     Set C(*this);
     return (C |= B); 

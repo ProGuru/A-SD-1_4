@@ -111,6 +111,7 @@ Set &Set::operator&= (const Set &B)
                 
                 a->next = newList;
                 a = newList;
+                a->next = nullptr;
             }
         }
     }
@@ -129,39 +130,31 @@ Set Set::operator& (const Set &B) const
 
 Set &Set::operator|= (const Set &B)
 { 
-    /*
-    for(int i = 0; i < B.n; ++i) 
-    {
-	bool f = true;
-	for (int j = 0; j < n; ++j)
-	    if (B.A[ i ] == A[ j ]) f = false;
-	if (f) A[n++] = B.A[ i ];
-    }
-    A[n] = 0;
-    return *this;
-    */
-    // List *a = head;
-
     for (List *q = B.A; q; q = q->next)
     {
         bool f = true;
-        List *a = A;
+        List *w;
 
-        for (a; a; a = a->next) {
+        for (List *a = A; a; a = a->next) {
             if (q->data == a->data) {
                 f = false;
+                break;
             }
         }
-            
+             
         if (f) {
-            List *newList = new List(0); // выделение памяти под новый элемент
+            List *newList = new List(q->data); // выделение памяти под новый элемент
 
-            newList->data = q->data;
-            newList->next = nullptr; // обязательно ли?
+            List *w = A;
 
-            a->next = newList;
-            a = newList;
+            for (w; w; w = w->next) {
+                if (w->next == nullptr) {
+                    break;
+                }
+            }
+            w->next = newList;
         }
+        
     }
     return *this;
 }
@@ -208,12 +201,12 @@ void Set::Show() // используется для вывода результ�
 
 Set::Set(char): S('A' + cnt++), n(0), A(new List(0)) // генератор множества. S('A' + cnt++) - устанавливает тег в виде первой буквы латинского алфавита для первого объекта класса, для 2-го объекта класса S = B, для 3-го S = C
 {
-    int nRand = rand(10); // здесь максимальное количество элементов множества = 10
+    int nRand = rand()%10 + 1; // здесь максимальное количество элементов множества = 10
     char Massiv[nRand + 1];
     
     for (int i = 0; i < nRand; i++) // N - мощность универсума
     {
-        unitRand = rand(strlen(Uni));
+        int unitRand = rand()%strlen(Uni);
         Massiv[ n++ ] = Uni[unitRand]; 
     }
      
