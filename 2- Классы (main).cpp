@@ -17,11 +17,19 @@ int main()
     srand(time(nullptr));
     Set A('A'), B('B'), C('C'), D('D'), E; // программа передаёт параметр в виде символа констуктору Set(char) (конструктор множества)
     clock_t  begin = clock();
-    for(long q = 0; q < q0; q++)
+
+    E = (A & B);
+    /*
+        for(long q = 0; q < q0; q++)
     {
         E = (A & B & C) | D;
     }
+    */
     clock_t  end = clock() - begin;
+    A.Show();
+    B.Show();
+    C.Show();
+    D.Show();
     E.Show();
     cout << " Middle power = " << (A.power() + B.power() + C.power() + D.power() + E.power())/5 << " Time=" << (float)(end) / CLOCKS_PER_SEC << " c / " << q0 << endl;
     cin.get();
