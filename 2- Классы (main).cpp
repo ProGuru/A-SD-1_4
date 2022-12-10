@@ -18,13 +18,15 @@ int main()
     Set A('A'), B('B'), C('C'), D('D'), E; // программа передаёт параметр в виде символа констуктору Set(char) (конструктор множества)
     clock_t  begin = clock();
 
-    E = (A & B);
+    E = (A | B);
+    
     /*
-        for(long q = 0; q < q0; q++)
+    for(long q = 0; q < q0; q++)
     {
         E = (A & B & C) | D;
     }
     */
+    
     clock_t  end = clock() - begin;
     A.Show();
     B.Show();
