@@ -15,17 +15,29 @@ const long q0 = 100000; // количество повторений цикла 
 int main()
 { 
     srand(time(nullptr));
+
+    int inputMenu = 0;
+    while ((inputMenu != 1) && (inputMenu != 2))
+    {
+        cout << "Ввод элементов массива будет вручную (1), или в случайном порядке (2)?" << endl;
+        cin >> inputMenu;
+    }
+
+    if (inputMenu == 1) {
+        cout << "1";
+    } else {
+        cout << "2";
+    }
+    
     Set A('A'), B('B'), C('C'), D('D'), E; // программа передаёт параметр в виде символа констуктору Set(char) (конструктор множества)
     clock_t  begin = clock();
 
-    E = (A | B);
+    // E = (A & B);
     
-    /*
     for(long q = 0; q < q0; q++)
     {
         E = (A & B & C) | D;
     }
-    */
     
     clock_t  end = clock() - begin;
     A.Show();
