@@ -3,6 +3,7 @@
 #include <ctime> // time.h для C, ctime для С++
 #include <bits/stdc++.h>
 #include <iostream>
+#include <conio.h>
 
 #include "Set_1.h" // массив символов
 #include "Set_2.h" // массив битов
@@ -227,5 +228,6 @@ int main()
     cout << " Middle power = " << (list_A.power() + list_B.power() + list_C.power() + list_D.power() + list_E.power())/5 << " Time=" << (float)(end3) / CLOCKS_PER_SEC << " c / " << q0 << endl;
     
     cin.get();
+    getch();
     return 0;
 }
