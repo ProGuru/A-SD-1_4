@@ -88,9 +88,10 @@ void sortArray(char *array) {
 char* makeRandonArray() {
     char *array = new char[N];
     int n = 0; // индекс массива
-    int p = 5, q = 2; // переменные для управления вероятностю появления нуля
+    int PERSCENT_OF_PROBABILITY = 5; // (число от 0 до 100)
+    int p = 10, q = PERSCENT_OF_PROBABILITY; // переменные для управления вероятностю появления нуля
     for (int i = 0; i < N; i++) 
-	    if (rand()%p>q) array[ n++ ] = Un[i]; // в результате геренеции множества образуется массив символов, а также ведётся подсчёт мощности множества
+	    if (rand()%p<q) array[ n++ ] = Un[i]; // в результате геренеции множества образуется массив символов, а также ведётся подсчёт мощности множества
     array[n] = 0;
     return array;
 }
@@ -227,7 +228,7 @@ int main()
     
     cout << " Middle power = " << (list_A.power() + list_B.power() + list_C.power() + list_D.power() + list_E.power())/5 << " Time=" << (float)(end3) / CLOCKS_PER_SEC << " c / " << q0 << endl;
     
-    cin.get();
+    cout << endl <<  "Нажмите любую кнопку для выхода";
     getch();
     return 0;
 }
