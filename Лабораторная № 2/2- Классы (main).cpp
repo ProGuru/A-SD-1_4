@@ -3,7 +3,7 @@
 #include <ctime> // time.h для C, ctime для С++
 #include <bits/stdc++.h>
 #include <iostream>
-#include <conio.h>
+//#include <conio.h>
 
 #include "Set_1.h" // массив символов
 #include "Set_2.h" // массив битов
@@ -163,7 +163,6 @@ int main()
     
     for(long q = 0; q < q0; q++)
     {
-        //arrayLetter_E = (arrayLetter_A | arrayLetter_B);
         arrayLetter_E = (arrayLetter_A & arrayLetter_B & arrayLetter_C) | arrayLetter_D;
     }
     
@@ -179,9 +178,8 @@ int main()
     //  Массив битов:
     clock_t  begin1 = clock();
     
-    for(long q = 0; q < q0; q++)
+    for(long q = 0; q < q0; q++) // ИЗМЕНИЛ КУ0 НА 1
     {
-        //arrayBits_E = (arrayBits_A | arrayBits_B);
         arrayBits_E = (arrayBits_A & arrayBits_B & arrayBits_C) | arrayBits_D;
     }
     
@@ -199,7 +197,6 @@ int main()
     
     for(long q = 0; q < q0; q++)
     {
-        //word_E = (word_A | word_B);
         word_E = (word_A & word_B & word_C) | word_D;
     }
     
@@ -217,7 +214,6 @@ int main()
     
     for(long q = 0; q < q0; q++)
     {
-        //list_E = (list_A | list_B);
         list_E = (list_A & list_B & list_C) | list_D;
     }
     
@@ -229,6 +225,7 @@ int main()
     cout << " Middle power = " << (list_A.power() + list_B.power() + list_C.power() + list_D.power() + list_E.power())/5 << " Time=" << (float)(end3) / CLOCKS_PER_SEC << " c / " << q0 << endl;
     
     cout << endl <<  "Нажмите любую кнопку для выхода";
-    getch();
+    cin.get();
+    //getch();
     return 0;
 }

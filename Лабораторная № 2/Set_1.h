@@ -131,10 +131,10 @@ SetLetter &SetLetter::operator= (SetLetter&& B) //Присваивание с п
 {
     if (this != &B)
     {
-    n = B.n; 
-    A = B.A;  
-    S = 'A' + cnt++; 
-    B.A = nullptr; 
+        n = B.n; 
+        A = B.A;  
+        S = 'A' + cnt++; 
+        B.A = nullptr; 
     }
 	return *this; 
 }

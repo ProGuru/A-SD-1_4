@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 //Класс «узел дерева»
 class Node 
 {
@@ -63,11 +61,17 @@ Tree :: ~Tree()
   delete root; 
 }
 
+// создание поддерева
+
 Node * Tree :: MakeNode(int depth)
 { 
   Node * v = nullptr;
   int Y = (depth < rand()%6+1) && (num <= 'z');
-//Вариант: cout << "Node (" << num << ',' << depth << ")1/0: "; cin >> Y;
+
+  //Вариант: 
+  cout << "Node (" << num << ',' << depth << ")1/0: "; 
+  cin >> Y;
+
   if (Y) // создание узла, если Y = 1
   {	
 	v = new Node;
@@ -79,6 +83,8 @@ Node * Tree :: MakeNode(int depth)
   }
   return v;
 }
+
+// рисование дерева
 
 void Tree :: OutTree()
 {	
@@ -92,12 +98,15 @@ void Tree :: OutTree()
 	cout << "\n";  
 }
 
+// Функция заполнения точками матрицы символов
+
 void Tree :: clrscr()
 { 
   for(int i = 0; i < maxrow; i++)
-	memset(SCREEN[i], '.', 80);
+	memset(SCREEN[i], '.', 80); // Функция memset заполняет num байтов блока памяти
 }
 
+// Расставление меток вершиндерева в матрице символов
 
 void Tree :: OutNodes(Node * v, int r, int c) 
 { 
@@ -142,6 +151,8 @@ public:
   { h %= N; return Q[ h++ ]; }
 };
 
+// обход дерева «в глубину»
+
 int Tree :: DFS() 
 { 
   const int MaxS = 20; // максимальный размер стека
@@ -163,6 +174,8 @@ int Tree :: DFS()
   cout << endl << "Количество вершин, имеющих ровно одного потомка: " << k << endl;
   return count;
 }
+
+// обход «в ширину»
 
 int Tree :: BFS()
 { 
